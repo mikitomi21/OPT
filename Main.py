@@ -1,18 +1,7 @@
-class Test:
-    __list = []
-    def addElement(self, arg):
-        self.__list.append(arg)
+tab = [1,2,3,3,4,5,6,7,9,2,42,443,56,87,4,2]
 
-    def popBack(self):
-        if len(self.__list):
-            return self.__list.pop(len(self.__list)-1)
+map1 = map(lambda x:x*2, tab)
+print(list(map1))
 
-obj = Test()
-
-obj.addElement(23)
-obj.addElement('a')
-obj.addElement("ala")
-obj._Test__list.append("elo")
-print(obj._Test__list)
-obj.popBack()
-print(obj._Test__list)
+fil = filter(lambda x:x%3==0, tab)
+print(list(fil))

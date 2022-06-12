@@ -1,6 +1,8 @@
 class Player:
-    def __init__(self, name):
+    def __init__(self, name, estate="burgers"):
         self._name = name
+        #burgers -> nobility -> king
+        self._estate = estate
         self._age = 0
         # Skala wszystkich umiejetnosci 0-20
         self._health = 10
@@ -11,6 +13,18 @@ class Player:
 
     def __del__(self):
         print(f"{self._name} umarl, zyl {self._age} lat")
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, name):
+        self._name = name
+
+    def get_estate(self):
+        return self._estate
+
+    def set_estate(self, estate):
+        self._estate = estate
 
     def get_age(self):
         return self._age
@@ -62,6 +76,7 @@ class Player:
             self._isAlive = False
         else:
             self._age+=1
+            self.upadate_estate()
 
     def print_skills(self):
         print(f"Health: {self._health}")
@@ -75,3 +90,13 @@ class Player:
         self.add_loyal(skills[2])
         self.add_money(skills[3])
 
+    def upadate_estate(self):
+        if self._estate == "burgers":
+            if self._age >= 10 and self._money >= 10:
+                print("Gratulacje, przenosisz sie do klasy szlachty")
+                self._estate = "nobility"
+        elif self._estate == "nobility":
+            if self._age >= 25 and self._money >= 15 and self._loyal >= 15:
+                print("Gratulacje, przenosisz sie do klasy krola")
+                print("Teraz ty zarzadzasz krajem")
+                self._estate = "king"

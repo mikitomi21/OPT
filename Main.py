@@ -1,4 +1,3 @@
-from PySide6.QtWidgets import QApplication
 from Player import *
 from Tasks import *
 

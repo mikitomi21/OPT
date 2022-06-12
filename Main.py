@@ -2,6 +2,14 @@ from PySide6.QtWidgets import QApplication
 from Player import *
 from Tasks import *
 
+def choose_option():
+    print(f"{player.get_name()} lat {player.get_age()}")
+    print("""Wybierz opcje:
+    1.Nastepna tura
+    2.Wyswietl umiejetnosci
+    """)
+    option = input()
+
 def ask_for_next_game():
     while True:
         nextGame = input("Czy chcesz grac nowa postacia? (y/n)")

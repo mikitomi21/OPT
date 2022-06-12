@@ -6,9 +6,9 @@ class Player:
         self._age = 0
         # Skala wszystkich umiejetnosci 0-20
         self._health = 10
-        self._power = 10
-        self._loyal = 10
-        self._money = 10
+        self._power = 3
+        self._loyal = 3
+        self._money = 3
         self._isAlive = True
 
     def __del__(self):
@@ -92,11 +92,11 @@ class Player:
 
     def upadate_estate(self):
         if self._estate == "burgers":
-            if self._age >= 10 and self._money >= 10:
+            if self._money >= 10:
                 print("Gratulacje, przenosisz sie do klasy szlachty")
                 self._estate = "nobility"
         elif self._estate == "nobility":
-            if self._age >= 25 and self._money >= 15 and self._loyal >= 15:
+            if self._money >= 15 and self._loyal >= 15:
                 print("Gratulacje, przenosisz sie do klasy krola")
                 print("Teraz ty zarzadzasz krajem")
                 self._estate = "king"

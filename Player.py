@@ -10,6 +10,7 @@ class Player:
         self._loyal = 3
         self._money = 3
         self._isAlive = True
+        self._backpack = []
 
     def __del__(self):
         print(f"{self._name} umarl, zyl {self._age} lat")
@@ -78,6 +79,16 @@ class Player:
             self._age+=1
             self.upadate_estate()
 
+    def get_backpack(self):
+        return self._backpack
+
+    def add_element_to_backpack(self, element):
+        self._backpack.append(element)
+
+    def delete_element_to_backpack(self, element):
+        if len(self._backpack) > 0:
+            self._backpack.remove(len(self._backpack)-1)
+
     def print_skills(self):
         print(f"Health: {self._health}")
         print(f"Power: {self._power}")
@@ -100,3 +111,6 @@ class Player:
                 print("Gratulacje, przenosisz sie do klasy krola")
                 print("Teraz ty zarzadzasz krajem")
                 self._estate = "king"
+
+    def kill_outself(self):
+        self._isAlive = False

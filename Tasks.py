@@ -20,7 +20,11 @@ tasks = {"burgers":
                 ["Wrog najechal na twoj kraj. Bedziesz bronil swojej ojczyzny?", [-4,2,4,-2], [0,0,-4,0]]
             ],
 
-         "king":[]
+         "king":
+             [
+                ["Ktos na tle mieszkancow zaczac cb wyzywac. Ukarasz go?", [0,2,-3,-1], [0,-3,-1,0]],
+                ["Przajzny kraj proponuje sojusz. Przyjmiesz go?", [0,2,2,-1], [0,0,-2,0]],
+             ]
 }
 
 
